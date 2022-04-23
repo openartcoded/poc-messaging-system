@@ -1,0 +1,25 @@
+version: '3.9'
+services:
+  mqtt_rust_subscriber:
+    restart: always
+    build: ./rust-mqtt-subscriber/.
+    links:
+      - artemis
+    environment:
+      RUST_LOG: debug
+      MQTT_HOST: artemis
+      MQTT_PORT: 1883
+      MQTT_USERNAME: root
+      MQTT_PASSWORD: root
+      MQTT_TOPIC_SUBSCRIPTION: shared_topic
+  mqtt_nodejs_publisher:
+    restart: always
+    build: ./nodejs-mqtt-publisher/.  
+    links:
+      - artemis
+    environment:
+      MQTT_HOST: artemis
+      MQTT_PORT: 1883
+      MQTT_USERNAME: root
+      MQTT_PASSWORD: root
+      MQTT_TOPIC_PUBLISHING: shared_topic

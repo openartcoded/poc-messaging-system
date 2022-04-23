@@ -1,0 +1,14 @@
+version: '3.9'
+services:
+  artemis:
+    restart: always
+    image: nbittich/artemis:v2022.1.2-2_21_0-jre-17
+    environment:
+      ARTEMIS_USER: root
+      ARTEMIS_PASSWORD: root
+    ports:
+      - 11883:1883 # MQTT
+      - 15445:5445 # HORNETQ, STOMP
+      - 15672:5672 # AMQP
+      - 55513:61613 # STOMP
+      - 55516:61616 # CORE, MQTT, AMQP, HORNETQ, STOMP, OPENWIRE
