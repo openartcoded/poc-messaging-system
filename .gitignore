@@ -1,3 +1,10 @@
 /target
 node_modules
 poc_mqtt_subscriber*
+.env
+
+target
+.mvn
+.idea
+mvn*
+*.iml

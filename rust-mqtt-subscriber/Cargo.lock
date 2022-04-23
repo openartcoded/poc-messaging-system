@@ -258,6 +258,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
 
 [[package]]
+name = "mqtt_subscriber"
+version = "0.1.0"
+dependencies = [
+ "env_logger",
+ "lazy_static",
+ "log",
+ "paho-mqtt",
+ "serde",
+ "serde_json",
+]
+
+[[package]]
 name = "openssl-sys"
 version = "0.9.72"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -313,18 +325,6 @@ name = "pkg-config"
 version = "0.3.25"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "1df8c4ec4b0627e53bdf214615ad287367e482558cf84b109250b37464dc03ae"
-
-[[package]]
-name = "poc-mqtt"
-version = "0.1.0"
-dependencies = [
- "env_logger",
- "lazy_static",
- "log",
- "paho-mqtt",
- "serde",
- "serde_json",
-]
 
 [[package]]
 name = "proc-macro2"

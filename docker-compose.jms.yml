@@ -1,0 +1,12 @@
+version: '3.9'
+services:
+  jms_java_publisher:
+    restart: always
+    build: ./java-jms-publisher/.  
+    links:
+      - artemis
+    environment:
+      BROKER_URL: tcp://artemis:61616
+      JMS_USERNAME: root
+      JMS_PASSWORD: root
+      JMS_TOPIC: shared_topic

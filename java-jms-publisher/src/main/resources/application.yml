@@ -1,0 +1,11 @@
+application:
+  topic: ${JMS_TOPIC:shared_topic}
+
+spring:
+  artemis:
+    broker-url: ${BROKER_URL:tcp://localhost:55516}
+    user: ${JMS_USERNAME:root}
+    password: ${JMS_PASSWORD:root}
+
+server:
+  port: 0
