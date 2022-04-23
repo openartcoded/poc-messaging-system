@@ -70,6 +70,13 @@ In order to break the monolith and supports other languages, MQTT can be used as
       TOPIC: shared_topic 
 ```
 
+## Non soyentific benchmark
 
+```
+NAME                               CPU %     MEM USAGE / LIMIT     MEM %      
+rust                               0.05%     2.426MiB / 15.06GiB   0.02%
+nodejs                             0.00%     75.45MiB / 15.06GiB   0.49%
+java                               0.08%     274.9MiB / 15.06GiB   1.78%
+```
 
 
