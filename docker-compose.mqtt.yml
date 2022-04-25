@@ -1,8 +1,8 @@
 version: '3.9'
 services:
-  mqtt_rust_subscriber:
+  mqtt_rust_pubsub:
     restart: always
-    build: ./rust-mqtt-subscriber/.
+    build: ./rust-mqtt-pubsub/.
     links:
       - artemis
     environment:
@@ -11,7 +11,8 @@ services:
       MQTT_PORT: 1883
       MQTT_USERNAME: root
       MQTT_PASSWORD: root
-      MQTT_TOPIC_SUBSCRIPTION: shared_topic
+      MQTT_TOPIC_SUBSCRIPTION: mqtt_topic
+      MQTT_TOPIC_PUBLISHING: jms_topic
   mqtt_nodejs_publisher:
     restart: always
     build: ./nodejs-mqtt-publisher/.  
@@ -22,4 +23,4 @@ services:
       MQTT_PORT: 1883
       MQTT_USERNAME: root
       MQTT_PASSWORD: root
-      MQTT_TOPIC_PUBLISHING: shared_topic
+      MQTT_TOPIC_PUBLISHING: mqtt_topic

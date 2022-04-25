@@ -1,5 +1,7 @@
 application:
-  topic: ${JMS_TOPIC:shared_topic}
+  topic:
+    subscription: ${JMS_TOPIC_SUBSCRIPTION:shared_topic}
+    publish: ${JMS_TOPIC_PUBLISHING:mqtt_topic}
 
 spring:
   artemis:

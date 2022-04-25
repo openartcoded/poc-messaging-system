@@ -1,12 +1,13 @@
 version: '3.9'
 services:
-  jms_java_publisher:
+  jms_java_pubsub:
     restart: always
-    build: ./java-jms-publisher/.  
+    build: ./java-jms-pubsub/.  
     links:
       - artemis
     environment:
       BROKER_URL: tcp://artemis:61616
       JMS_USERNAME: root
       JMS_PASSWORD: root
-      JMS_TOPIC: shared_topic
+      JMS_TOPIC_PUBLISHING: mqtt_topic
+      JMS_TOPIC_SUBSCRIPTION: jms_topic
